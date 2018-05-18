@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Registro</title>
+		<link rel="stylesheet" href="css/uikit.min.css" />
+   		<script src="js/uikit.min.js"></script>
+    	<script src="js/uikit-icons.min.js"></script>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+		<nav class="navbar navbar-default" style="margin: 0;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Banco</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<!--<li class="active"><a href="#">Estado de cuenta</a></li>
+					<li class="active"><a href="#">Realizar Transferencia</a></li>
+					<li class="active"><a href="#">Pedir prestamo</a></li>-->
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<!--<li><a href="#"><span class="glyphicon glyphicon-user"></span>Ver perfil</a></li>-->
+					<li><a href="Index2.html"><span class="glyphicon glyphicon-home"></span>Cancelar</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div style="min-height: 20%">
+		<img src="image/Land.jpg" alt="Registro" style="height: 150px;width: 1500px">
+		</div>
+	</head>
+	<body>
+		<br>
+		<div class="uk-dark uk-background-muted uk-padding">
+			<div class="uk-box-shadow-xlarge uk-padding" style="text-align: center;">
+				<p style="text-align: center;font-size: 200%" class="uk-button-secondary">Registrarse</p>
+				<br>
+				<p style="font-size: 170%" class="">Nombre</p>
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su nombre">
+				</div>
+				<div style="padding: 1%"></div>
+				<p style="font-size: 170%">Correo</p>
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: pencil"></span>
+					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su correo">
+				</div>
+				<div style="padding: 1%"></div>
+				<p style="font-size: 170%">Contraseña</p>
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: lock"></span>
+					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su contraseña">
+				</div>
+				<div style="padding: 1%"></div>
+				<p style="font-size: 170%">Confirmar contraseña</p>
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: check"></span>
+					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Confirme su contraseña">
+				</div>
+				<div style="padding: 1%"></div>
+				<button class="uk-button uk-button-secondary uk-width-medium demo" onclick="location.href='Index2.html'" style="font-size: 130%" type="button" onclick="UIkit.notification({message : 'El registro se ha completado'})"><a href="Index2.html" style="color: White">Registrarse</a></button>
+			</div>
+		</div>
+	</body>
+</html>

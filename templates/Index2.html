@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Bienvenida/o a Banco solid</title>
-	<link rel="stylesheet" href="css/uikit.min.css" />
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/uikit.min.css')}}" />
+    <script src="{{url_for('static', filename='js/uikit.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/uikit-icons.min.js')}}"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -24,7 +24,7 @@
 
         	<div class="carousel-inner">
         		<div class="item active">
-        			<img src="image/camino.jpeg" alt="camino" style="width: 100%">
+        			<img src="{{url_for('static', filename='image/camino.jpeg')}}" alt="camino" style="width: 100%">
 					<div class="uk-overlay uk-position-top uk-overlay-primary" style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);font-size: 150%;font-family:MS Serif;text-align: center;padding: 6%;font-style: bold;">
 						<p>Iniciar sesión</p>
 						<p>Usuario:</p>
@@ -47,7 +47,7 @@
 					</div>
         	    </div>
         		<div class="item">
-        			<img src="image/bank.jpg" alt="presentacion" style="width: 100%">
+        			<img src="{{url_for('static', filename='image/bank.jpg')}}" alt="presentacion" style="width: 100%">
         			<div style="position: absolute;top: 0%;left: 0%;color: White;font-family: MS Serif;font-style: italic; font-size: 280%">
         				<p>Sientase bienvenido!</p>
         				<p>Lo dotamos de todas las</p>
@@ -56,13 +56,13 @@
         			</div>
         		</div>
         		<div class="item">
-        			<img src="image/viaje.jpg" alt="viaje" style="width: 100%">
+        			<img src="{{url_for('static', filename='image/viaje.jpg')}}" alt="viaje" style="width: 100%">
         			<div class="uk-overlay uk-position-top uk-overlay-default" style="position: absolute;top: 0%;left: 0%;color: White;font-family: MS Serif;font-style: oblique; font-size: 300%;color: Black;padding: 5%">
         				<p>Este es el momento perfecto para embarcarse en el viaje de sus sueños</p>
         			</div>
         		</div>
         		<div class="item">
-					<img src="image/banco2.jpg" alt="solvencia" style="width: 100%">
+					<img src="{{url_for('static', filename='image/banco2.jpg')}}" alt="solvencia" style="width: 100%">
         			<div class="uk-overlay uk-position-top uk-overlay-primary" style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);font-size: 350%;font-family:MS Serif;text-align: center;padding: 6%;font-style: bold;"><p>Disfruta de todos los beneficios de tu banco</p></div>
         		</div>
         	</div>

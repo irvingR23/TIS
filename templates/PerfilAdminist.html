@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Perfil administrativo</title>
-		<link rel="stylesheet" href="css/uikit.min.css" />
-   		<script src="js/uikit.min.js"></script>
-    	<script src="js/uikit-icons.min.js"></script>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/uikit.min.css')}}" />
+   		<script src="{{url_for('static',filename='js/uikit.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='js/uikit-icons.min.js')}}"></script>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -30,7 +30,7 @@
 		<div class="panel panel-default">
 		<div class="panel-heading" style="text-align: center;"><p><kbd style="font-size: 120%;color: Black;font-family: Georgia;font-style: italic;">Perfil de usuario</kbd></p></div>
 		<div>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/admin.jpg" alt="usuario" style="height: 470px" class="uk-box-shadow-large">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{url_for('static',filename='image/admin.jpg')}}" alt="usuario" style="height: 470px" class="uk-box-shadow-large">
 			<div style="padding: 1%"></div>
 			<div class="uk-card uk-card-secondary uk-card-body uk-width-1-2@m uk-card-hover" style="position: absolute;top: 18%;left: 35%;text-align: center;">
 				<hr class="uk-divider-icon">

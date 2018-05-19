@@ -38,22 +38,23 @@
 			<div class="uk-box-shadow-xlarge uk-padding" style="text-align: center;">
 				<p style="text-align: center;font-size: 200%" class="uk-button-secondary">Registrarse</p>
 				<br>
+				<form method="post">
 				<p style="font-size: 170%" class="">Nombre</p>
 				<div class="uk-inline">
 					<span class="uk-form-icon" uk-icon="icon: user"></span>
-					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su nombre">
+					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su nombre" name="nombre">
 				</div>
 				<div style="padding: 1%"></div>
-				<p style="font-size: 170%">Correo</p>
+				<p style="font-size: 170%">Usuario</p>
 				<div class="uk-inline">
 					<span class="uk-form-icon" uk-icon="icon: pencil"></span>
-					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su correo">
+					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su correo" name="usuario">
 				</div>
 				<div style="padding: 1%"></div>
 				<p style="font-size: 170%">Contraseña</p>
 				<div class="uk-inline">
 					<span class="uk-form-icon" uk-icon="icon: lock"></span>
-					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su contraseña">
+					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Introduzca su contraseña" name="contrasenia">
 				</div>
 				<div style="padding: 1%"></div>
 				<p style="font-size: 170%">Confirmar contraseña</p>
@@ -62,7 +63,8 @@
 					<input class="uk-input uk-width-xxlarge  uk-form-large" type="text" style="font-size: 170%" placeholder="Confirme su contraseña">
 				</div>
 				<div style="padding: 1%"></div>
-				<button class="uk-button uk-button-secondary uk-width-medium demo" onclick="location.href='Index2.html'" style="font-size: 130%" type="button" onclick="UIkit.notification({message : 'El registro se ha completado'})"><a href="Index2.html" style="color: White">Registrarse</a></button>
+				<button class="uk-button uk-button-secondary uk-width-medium demo" onclick="location.href='Index2.html'" style="font-size: 130%" type="submit" onclick="UIkit.notification({message : 'El registro se ha completado'})"><a href="Index2.html" style="color: White">Registrarse</a></button>
+				</form>
 			</div>
 		</div>
 	</body>

@@ -48,11 +48,10 @@
         <ul class="nav navbar-nav">
           <li class="active uk-box-shadow-hover-large"><a href="estadoCuenta.html">Estado de cuenta</a></li>
           <li class="active uk-box-shadow-hover-large"><a href="#">Realizar Transferencia</a></li>
-          <li class="active uk-box-shadow-hover-large"><a href="SPrestamo.html">Pedir prestamo</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="perfil.html"><span class="glyphicon glyphicon-user"></span>Ver perfil</a></li>
-          <li><a href="Index2.html"><span class="glyphicon glyphicon-home"></span>Cerrar sesion</a></li>
+          <li><a href="/perfil"><span class="glyphicon glyphicon-user"></span>Ver perfil</a></li>
+          <li><a href="/salir"><span class="glyphicon glyphicon-home"></span>Cerrar sesion</a></li>
         </ul>
       </div>
     </nav>
@@ -65,23 +64,24 @@
         <li><a href="#section2">Solicitar Prestamo</a></li>
         <li><a href="#section3">Ver estado de cuenta</a></li>
         <li><a href="#section4">Realizar trasferencia</a></li>
-        <li><a href="#section5">Cancelaciones</a></li>
       </ul><br>
     </div>
 
+    <<form method="post">
     <div class="col-sm-9">
       <h4>Solicitar Prestamo</h4>
       <p>&nbsp;Ingrese la cantidad&nbsp;&nbsp; 
-        <input maxlength="6" name="Cantidad" type="double" value="000,000.00" />
+        <input maxlength="6" name="cantidad" type="double"/>
       </p>     
   </div>
   <div class="col-sm-9">
     <p>
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Pedir Prestamo</button>
+      <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Pedir Prestamo</button>
     </p>
     <!-- Modal -->
   
   </div>
+  </form>
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">

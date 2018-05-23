@@ -91,5 +91,22 @@ def  perfila():
 	datos=cursor.fetchone()
 	return render_template("PerfilAdminist.html",datos=datos)
 
+@app.route("/borrarUsuario")
+def borraru():
+	cursor=conn.cursor()
+	usern=session.get('username')
+	cursor.execute("delete cliente from cliente where usuario=%s",(usern,))
+	conn.commit()
+	cursor.close()
+	return redirect(url_for("main"))
+
+@app.route("/crearTarjeta",methods=['POST'])
+def crearTarjeta():
+	if request.method=='POST':
+		user=int(request.form["us"])
+		cursor=conn.cursor()
+		cursor.execute("INSERT INTO tarjeta(credDisp,deuda,saldo,usuario) values(20000,0,15000,%s)",(user,))
+		return redirect(url_for("perfila"))
+
 if __name__ == "__main__":
 	app.run(debug=True)

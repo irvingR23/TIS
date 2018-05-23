@@ -40,12 +40,23 @@
 				<h4>Usuario:</h4>
 				<h4>{{datos[1]}}</h4>
 				<br>
-				<div><button class="uk-button uk-button-primary">Asignar Tarjetas</button></div>
+				<div><button class="uk-button uk-button-primary" uk-toggle="target: #id" type="button">Asignar Tarjetas</button></div>
 				<br>
 				<div><button class="uk-button uk-button-primary">Confirmar prestamos</button></div>
 				<br>
 				<div><button class="uk-button uk-button-primary">Cuentas canceladas</button></div>
 				<hr class="uk-divider-icon">
+				<div id="id" uk-modal>
+					<div class="uk-modal-dialog uk-modal-body">
+						<form action="/crearTarjeta">
+						<h2 class="uk-modal-title" style="text-align: center;">Ingrese el numero de usuario a agregarle tarjeta</h2>
+						<input type="text" class="uk-input" name="us">
+						<p style="text-align: center;padding: 1%">
+						<button class="uk-button uk-button-primary" type="submit">Aceptar</button>
+						</p>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="uk-alert-warning" uk-alert style="font-size: 150%;left: 85%;top: 50%;position: absolute;">

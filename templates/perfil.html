@@ -35,7 +35,7 @@
 		<div>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{url_for('static',filename='image/gardner.jpg')}}" alt="usuario" style="height: 470px" class="uk-box-shadow-large">
 			<div style="padding: 1%"></div>
-			<div style="position: absolute;left: 4%"><button class="uk-button uk-button-danger uk-width-medium">Eliminar cuenta</button></div>
+			<div style="position: absolute;left: 4%"><button class="uk-button uk-button-danger uk-width-medium" uk-toggle="target: #id">Eliminar cuenta</button></div>
 			<div class="uk-card uk-card-secondary uk-card-body uk-width-1-2@m uk-card-hover" style="position: absolute;top: 18%;left: 35%;text-align: center;">
 				<hr class="uk-divider-icon">
 				<h4>Nombre:</h4>
@@ -51,7 +51,19 @@
 				<h4>{{datos[0]}}</h4>
 				<hr class="uk-divider-icon">
 				<br>
-				<div><button class="uk-button uk-button-primary">Agregar tarjeta</button></div>
+				<div><button class="uk-button uk-button-primary">Bienvenido a su cuenta</button></div>
+			</div>
+			<div id="id" uk-modal>
+				<div class="uk-modal-dialog uk-modal-body">
+					<h2 class="uk-modal-title">Borrar cuenta</h2>
+					<p>¿Realmente desea borrar su cuenta?</p>
+					<p class="uk-text-right">
+						<form action="/borrarUsuario">
+						<button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+						<button class="uk-button uk-button-primary" type="submit">Aceptar</button>
+						</form>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

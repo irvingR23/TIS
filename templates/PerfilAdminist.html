@@ -48,9 +48,19 @@
 				<hr class="uk-divider-icon">
 				<div id="id" uk-modal>
 					<div class="uk-modal-dialog uk-modal-body">
-						<form action="/crearTarjeta">
+						<form action="/crearTarjeta" method="post">
 						<h2 class="uk-modal-title" style="text-align: center;">Ingrese el numero de usuario a agregarle tarjeta</h2>
 						<input type="text" class="uk-input" name="us">
+						<p style="text-align: center;padding: 1%">
+						</p>
+						<div style="padding: 1%"></div>
+						<h2 class="uk-modal-title" style="text-align: center;">Ingrese el numero CVV</h2>
+						<input type="text" class="uk-input" name="cvv">
+						<p style="text-align: center;padding: 1%">
+						</p>
+						<div style="padding: 1%"></div>
+						<h2 class="uk-modal-title" style="text-align: center;">Ingrese La fecha de expiración de la tarjeta</h2>
+						<input type="text" class="uk-input" name="fechaEx">
 						<p style="text-align: center;padding: 1%">
 						<button class="uk-button uk-button-primary" type="submit">Aceptar</button>
 						</p>

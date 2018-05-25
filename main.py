@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect,url_for,session
+from flask import Flask,render_template,request,redirect,url_for,session,jsonify
 import MySQLdb
 app= Flask(__name__)
 
@@ -47,7 +47,7 @@ def registro():
 		nombre = str(request.form["nombre"])
 		cont= str(request.form["contrasenia"])
 		cursor =conn.cursor()
-		cursor.execute("INSERT INTO cliente(usuario,nombre,contrasenia) values(%s,%s,%s)",(user,nombre,cont))
+		cursor.execute("INSERT INTO cliente(usuario,nombre,contrasenia,saldo) values(%s,%s,%s,20000)",(user,nombre,cont))
 		conn.commit()
 		cursor.close()
 		return redirect(url_for("main"))
@@ -100,13 +100,55 @@ def borraru():
 	cursor.close()
 	return redirect(url_for("main"))
 
-@app.route("/crearTarjeta",methods=['POST'])
+@app.route("/crearTarjeta",methods=['POST','GET'])
 def crearTarjeta():
 	if request.method=='POST':
 		user=int(request.form["us"])
+		cv=int(request.form["cvv"])
+		fechaE=str(request.form["fechaEx"])
 		cursor=conn.cursor()
-		cursor.execute("INSERT INTO tarjeta(credDisp,deuda,saldo,usuario) values(20000,0,15000,%s)",(user,))
+		cursor.execute("select * from cliente where numeroCuenta=%s",(user,))
+		dat=cursor.fetchone()
+		cursor.execute("INSERT INTO tarjeta(credDisp,deuda,saldo,usuario,CVV,propietario,fechaExpiracion) values(20000,0,15000,%s,%s,%s,%s)",(user,cv,dat[3],fechaE))
+		conn.commit()
 		return redirect(url_for("perfila"))
+
+@app.route("/estadoCuenta")
+def estadoCuenta():
+	cursor=conn.cursor()
+	us=session.get('username')
+	cursor.execute("select * from cliente where numeroC=%s",(us,))
+	dat=cursor.fetchone()
+	cursor.execute("select * from tarjeta where ")
+	return render_template("estadoCuenta.html")
+
+@app.route("/banco/operacion/<int:cantidad>,<int:cuDest>,<int:numeroTarjeta>,<int:cvv>,<string:propietario>,<string:fechaExpiracion>",methods=['GET'])
+def transaccion(cantidad,cuDest,numeroTarjeta,cvv,propietario,fechaExpiracion):
+	try:
+		cursor=conn.cursor()
+		can=cantidad
+		cuD=cuDest
+		nt=numeroTarjeta
+		cvvd=cvv
+		prop=propietario
+		fechaE=fechaExpiracion
+		cursor.execute("select * from tarjeta where numero=%s",(nt,))
+		dat=cursor.fetchone()
+		cursor.execute("select * from cliente where numeroCuenta=%s",(dat[4],))
+		cliente=cursor.fetchone()
+		valor=cliente[7]-can
+		cursor.execute("select * from cliente where numeroCuenta=%s",(cuD,))
+		clienteD=cursor.fetchone()
+		valord=clienteD[7]+can
+		cursor.execute("update cliente set saldo=%s where numeroCuenta=%s",(valor,dat[4]))
+		conn.commit()
+		cursor.execute("update cliente set saldo=%s where numeroCuenta=%s",(valord,cuD))
+		conn.commit()
+		cursor.execute("INSERT INTO transac(cantidad,cuDest,numeroTarjeta,cvv,propietario,fechaExpiracion) values(%s,%s,%s,%s,%s,%s)",(can,cuD,nt,cvvd,prop,fechaE))
+		conn.commit()
+		return jsonify({'exito':True})
+	except:
+		return jsonify({'exito':False})
 
 if __name__ == "__main__":
 	app.run(debug=True)

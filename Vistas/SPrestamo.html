@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Solicitar Prestamo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/uikit.min.css')}}" />
+  <script src="{{url_for('static',filename='js/uikit.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/uikit-icons.min.js')}}"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-default" style="margin: 0;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Banco</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active uk-box-shadow-hover-large"><a href="estadoCuenta.html">Estado de cuenta</a></li>
+          <li class="active uk-box-shadow-hover-large"><a href="Transferencia.html">Realizar Transferencia</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/perfil"><span class="glyphicon glyphicon-user"></span>Ver perfil</a></li>
+          <li><a href="/salir"><span class="glyphicon glyphicon-home"></span>Cerrar sesion</a></li>
+        </ul>
+      </div>
+    </nav>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Banco N</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="SPrestamo.html">Solicitar Prestamo</a></li>
+        <li><a href="estadoCuenta.html">Ver estado de cuenta</a></li>
+        <li><a "Transferencia.html">Realizar trasferencia</a></li>
+        <li><a href="Cancelaciones.html">Cancelaciones</a></li>
+      </ul><br>
+    </div>
+
+    <form method="post">
+
+    <div class="col-sm-9">
+      <h4>Solicitar Prestamo</h4>
+      <p>&nbsp;Ingrese la cantidad&nbsp;&nbsp; 
+        <input maxlength="6" name="cantidad" type="double"/>
+      </p>  
+    </form>   
+  </div>
+  <div class="col-sm-9">
+    <p>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Pedir cancelacion</button>
+    </p>
+    <!-- Modal -->
+  
+  </div>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">¿Desea pedir prestamo</h4>
+        </div>
+        <div class="modal-body">
+          <p>IMPORTANTE!: Recuerde realizar su pago cada fin de mes, se le cobrera un cargo extra por atraso de pago</p>
+          <p>Confirme dando clic en aceptar</p>
+          <p>Sino de clic en cancelar</p>
+          <button type="button" class="btn btn-default" data-toggle="alert success" data-dissmiss="modal">Aceptar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+        
+      </div>  
+
+
+<footer class="container-fluid">
+  <p>Banco N</p>
+</footer>
+
+</body>
+</html>

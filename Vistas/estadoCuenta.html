@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Estado de Cuenta</title>
+  <meta charset="utf-6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="{{url_for('static',filename='js/uikit.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/uikit-icons.min.js')}}"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-default" style="margin: 0;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Banco</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active uk-box-shadow-hover-large"><a href="estadoCuenta.html">Estado de cuenta</a></li>
+          <li class="active uk-box-shadow-hover-large"><a href="Transferencia.html">Realizar Transferencia</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/perfil"><span class="glyphicon glyphicon-user"></span>Ver perfil</a></li>
+          <li><a href="/salir"><span class="glyphicon glyphicon-home"></span>Cerrar sesion</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="col-sm-3 sidenav">
+      <h4>Banco N</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="SPrestamo.html">Solicitar Prestamo</a></li>
+        <li><a href="estadoCuenta.html">Ver estado de cuenta</a></li>
+        <li><a href="Transferencia.html">Realizar trasferencia</a></li>
+        <li><a href="Cancelaciones.html">Cancelaciones</a></li>
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+      <h4>Estado de Cuenta</h4>
+      <p>&nbsp;Su dinero ahorrado es de:&nbsp;&nbsp; 
+        <div class="form-group" id="card-number-field">
+    <!-- afregar sume total de dinero-->
+           
+
+        </div>
+      </p>     
+  </div>
+  <div class="col-sm-9">
+    
+    </div>
+</body>
+</html>

@@ -15,27 +15,27 @@
 
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
     .row.content {height: 1500px}
-    
+
     /* Set gray background color and 100% height */
     .sidenav {
       background-color: #f1f1f1;
       height: 100%;
     }
-    
+
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
       color: white;
       padding: 15px;
     }
-    
+
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
         padding: 15px;
       }
-      .row.content {height: auto;} 
+      .row.content {height: auto;}
     }
   </style>
 </head>
@@ -46,8 +46,8 @@
           <a class="navbar-brand" href="#">Banco</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active uk-box-shadow-hover-large"><a href="estadoCuenta.html">Estado de cuenta</a></li>
-          <li class="active uk-box-shadow-hover-large"><a href="#">Realizar Transferencia</a></li>
+          <li class="active uk-box-shadow-hover-large"><a href="/estadoCuenta">Estado de cuenta</a></li>
+          <li class="active uk-box-shadow-hover-large"><a href="/transf">Realizar Transferencia</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/perfil"><span class="glyphicon glyphicon-user"></span>Ver perfil</a></li>
@@ -61,25 +61,25 @@
       <h4>Banco N</h4>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Home</a></li>
-        <li><a href="#section2">Solicitar Prestamo</a></li>
-        <li><a href="#section3">Ver estado de cuenta</a></li>
-        <li><a href="#section4">Realizar trasferencia</a></li>
+        <li><a href="/prestamo">Solicitar Prestamo</a></li>
+        <li><a href="/estadoCuenta">Ver estado de cuenta</a></li>
+        <li><a href="/transf">Realizar trasferencia</a></li>
       </ul><br>
     </div>
 
     <<form method="post">
     <div class="col-sm-9">
       <h4>Solicitar Prestamo</h4>
-      <p>&nbsp;Ingrese la cantidad&nbsp;&nbsp; 
+      <p>&nbsp;Ingrese la cantidad&nbsp;&nbsp;
         <input maxlength="6" name="cantidad" type="double"/>
-      </p>     
+      </p>
   </div>
   <div class="col-sm-9">
     <p>
       <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Pedir Prestamo</button>
     </p>
     <!-- Modal -->
-  
+
   </div>
   </form>
   <div class="modal fade" id="myModal" role="dialog">
@@ -102,11 +102,11 @@
 
   <p>
     <div class="alert success">
-      <span class="closebtn">&times;</span>  
+      <span class="closebtn">&times;</span>
       <strong>Hemos registrado su peticion de prestamo!</strong> lo esperamos pronto en su sucursal mas cercana.
     </div>
     </p>
-    
+
 
 
 <footer class="container-fluid">

@@ -21,7 +21,7 @@
 					<a class="navbar-brand" href="#">Banco</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active uk-box-shadow-hover-large"><a href="#">Realizar Transferencia</a></li>
+					<li class="active uk-box-shadow-hover-large"><a href="/transf">Realizar Transferencia</a></li>
 					<li class="active uk-box-shadow-hover-large"><a href="/prestamo">Pedir prestamo</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -34,21 +34,25 @@
 		<div style="padding: 2%"></div>
 		<div class="uk-card uk-card-secondary uk-box-shadow-xlarge" style="width: 80%;text-align: center;left: 10%;height: 80%;min-height: 80%">
 			<div style="padding: 6%"></div>
-			<h2>Nombre:</h2>
-			<h2>Saldo:</h2>
+			<h2>Nombre:{{dat[3]}}</h2>
+			<h2>Saldo:{{dat[7]}}</h2>
+			{% for tarjeta in tarjetas %}
 			<div class="uk-inline">
-			<button type="uk-button uk-button-default">Tarjeta</button>
+			<button type="uk-button uk-button-default" style="color: black">numero de Tarjeta {{tarjeta[0]}}</button>
 			<div uk-dropdown="mode: click">
 				<ul class="uk-nav uk-dropdown-nav">
-					<li class="uk-active"><button>hola</button></li>
-					<li><button>hola2</button></li>
+					<li class="uk-active"><p>credito disponible {{tarjeta[1]}}</p></li>
+					<li><p>Saldo {{tarjeta[3]}}</p></li>
+					<li><p>CVV {{tarjeta[5]}}</p></li>
+					<li><p>fechaExpiracion {{tarjeta[7]}}</p></li>
 				</ul>
 			</div>
 			</div>
+			{% endfor %}
 			<div style="padding: 10%"></div>
 		</div>
 		<footer>
-			
+
 		</footer>
 	</body>
 </html>w2

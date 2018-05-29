@@ -18,9 +18,9 @@
 					<a class="navbar-brand" href="#">Banco</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active uk-box-shadow-hover-large"><a href="estadoCuenta.html">Estado de cuenta</a></li>
-					<li class="active uk-box-shadow-hover-large"><a href="#">Realizar Transferencia</a></li>
-					<li class="active uk-box-shadow-hover-large"><a href="SPrestamo.html">Pedir prestamo</a></li>
+					<li class="active uk-box-shadow-hover-large"><a href="/estadoCuenta">Estado de cuenta</a></li>
+					<li class="active uk-box-shadow-hover-large"><a href="/transf">Realizar Transferencia</a></li>
+					<li class="active uk-box-shadow-hover-large"><a href="/prestamo">Pedir prestamo</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/perfil"><span class="glyphicon glyphicon-user"></span>Ver perfil</a></li>
@@ -37,27 +37,28 @@
 					<th>Egreso</th>
 					<th>Ingreso</th>
 					<th>Cuenta destino</th>
+					<th>Cuenta Remitente</th>
 				</tr>
 			</thead>
 			<tbody>
+				{% for transaccion in recibir %}
 				<tr>
-					<td>24-03-2016</td>
+					<td>Fecha N/E</td>
 					<td></td>
-					<td style="color: Green">$600.00</td>
-					<td>a839</td>
+					<td style="color: Green">{{transaccion[1]}}</td>
+					<td></td>
+					<td>{{transaccion[3]}}</td>
 				</tr>
+				{% endfor %}
+				{% for trans in dar %}
 				<tr>
-					<td>12-10-2016</td>
-					<td style="color: Red">$800.00</td>
+					<td>Fecha N/E</td>
+					<td style="color: Red">{{trans[1]}}</td>
 					<td></td>
-					<td>exa3232</td>
-				</tr>
-				<tr>
-					<td>3-11-2016</td>
+					<td>{{trans[2]}}</td>
 					<td></td>
-					<td style="color: Green">$15600.00</td>
-					<td>ds4343</td>
 				</tr>
+				{% endfor %}
 			</tbody>
 		</table>
 	</body>

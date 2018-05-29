@@ -19,9 +19,9 @@
 				</div>
 				<ul class="nav navbar-nav">
 					<li class="active uk-box-shadow-hover-large"><a href="/estadoCuenta">Estado de cuenta</a></li>
-					<li class="active uk-box-shadow-hover-large"><a href="#">Realizar Transferencia</a></li>
+					<li class="active uk-box-shadow-hover-large"><a href="/transf">Realizar Transferencia</a></li>
 					<li class="active uk-box-shadow-hover-large"><a href="/prestamo">Pedir prestamo</a></li>
-					<li class="active uk-box-shadow-hover-large"><a href="Historial.html">Ver historial de movimientos</a></li>
+					<li class="active uk-box-shadow-hover-large"><a href="/historial">Ver historial de movimientos</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/salir"><span class="glyphicon glyphicon-home"></span>Cerrar sesión</a></li>
@@ -51,7 +51,7 @@
 				<h4>{{datos[0]}}</h4>
 				<hr class="uk-divider-icon">
 				<br>
-				<div><button class="uk-button uk-button-primary">Bienvenido a su cuenta</button></div>
+				<div><button class="uk-button uk-button-primary" type="button" uk-toggle="target: #tarjetas">Cancelar tarjeta</button></div>
 			</div>
 			<div id="id" uk-modal>
 				<div class="uk-modal-dialog uk-modal-body">
@@ -63,6 +63,31 @@
 						<button class="uk-button uk-button-primary" type="submit">Aceptar</button>
 						</form>
 					</p>
+				</div>
+			</div>
+			<div id="tarjetas" uk-modal>
+				<div class="uk-modal-dialog uk-modal-body">
+					<button class="uk-modal-close-default" type="button" uk-close></button>
+					<h2 class="uk-modal-title">Tarjetas disponibles:</h2>
+					{% for tarj in tarjetas %}
+					<div>
+						<p>Numero {{tarj[0]}}</p>
+						<p>Deuda: {{tarj[2]}}</p>
+						<p>cvv: {{tarj[5]}}</p>
+						<p>Fecha expiración {{tarj[7]}}</p>
+						<div class="uk-inline">
+							<button class="uk-button uk-button-default" type="button">Cancelar tarjeta</button>
+							<div uk-drop="mode: click">
+								<div class="uk-card uk-card-body uk-card-default">
+									<p>Realmente deseas cancelar Esta tarjeta?</p>
+									<form action="/cancelarTarjeta/{{tarj[0]}},{{tarj[2]}},{{tarj[8]}}">
+									<button type="submit">Aceptar</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

@@ -42,7 +42,7 @@
 				<br>
 				<div><button class="uk-button uk-button-primary" uk-toggle="target: #id" type="button">Asignar Tarjetas</button></div>
 				<br>
-				<div><button class="uk-button uk-button-primary">Confirmar prestamos</button></div>
+				<div><button class="uk-button uk-button-primary" uk-toggle="target: #prestamos" type="button">Confirmar prestamos</button></div>
 				<br>
 				<div><button class="uk-button uk-button-primary">Cuentas canceladas</button></div>
 				<hr class="uk-divider-icon">
@@ -65,6 +65,18 @@
 						<button class="uk-button uk-button-primary" type="submit">Aceptar</button>
 						</p>
 						</form>
+					</div>
+				</div>
+				<div id="prestamos" uk-modal>
+					<div class="uk-modal-dialog uk-modal-body">
+						{% for peticion in peticiones %}
+						<p>Estado: {{peticion[5]}}</p>
+						<p>Cantidad a pedir {{peticion[4]}}</p>
+						<form action="/confirmarPrestamo/{{peticion[2]}},{{peticion[4]}},{{peticion[0]}}">
+						<button>Aceptar</button>
+						<button type="uk-modal-close">Cancelar</button>
+						</form>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
